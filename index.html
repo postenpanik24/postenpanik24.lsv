@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.8.4.2 (Linux)"/>
+	<meta name="created" content="00:00:00"/>
+	<meta name="changed" content="00:00:00"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
+		pre { font-family: "Liberation Mono", monospace; font-size: 10pt; background: transparent }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>!DOCTYPE html
+html lang=de
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titlepostenpanik24.lsv  Newstitle
+    style
+        root {
+            --primary-color #ff6b00;
+            --secondary-color #3a3a3a;
+            --light-bg #f4f4f4;
+            --dark-bg #1c1c1c;
+            --text-light #ffffff;
+            --text-dark #333333;
+        }
+
+         {
+            margin 0;
+            padding 0;
+            box-sizing border-box;
+            font-family 'Arial', sans-serif;
+        }
+
+        body {
+            background-color var(--light-bg);
+            color var(--text-dark);
+        }
+
+        .container {
+            max-width 1200px;
+            margin 0 auto;
+            padding 0 20px;
+        }
+
+         Header Styles 
+        header {
+            background-color var(--dark-bg);
+            color var(--text-light);
+            padding 15px 0;
+            position sticky;
+            top 0;
+            z-index 1000;
+        }
+
+        .header-container {
+            display flex;
+            justify-content space-between;
+            align-items center;
+        }
+
+        .logo {
+            font-size 24px;
+            font-weight bold;
+            color var(--primary-color);
+            text-decoration none;
+        }
+
+        .logo span {
+            color var(--text-light);
+        }
+
+        nav ul {
+            display flex;
+            list-style none;
+        }
+
+        nav ul li {
+            margin-left 20px;
+        }
+
+        nav ul li a {
+            color var(--text-light);
+            text-decoration none;
+            text-transform uppercase;
+            font-size 14px;
+            font-weight bold;
+            transition color 0.3s ease;
+        }
+
+        nav ul li ahover {
+            color var(--primary-color);
+        }
+
+        .auth-buttons a {
+            margin-left 15px;
+            padding 8px 15px;
+            background-color var(--primary-color);
+            color var(--text-light);
+            border-radius 4px;
+            text-decoration none;
+            font-weight bold;
+            transition background-color 0.3s ease;
+        }
+
+        .auth-buttons ahover {
+            background-color #ff8533;
+        }
+
+         Hero Section 
+        .hero {
+            background-image linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('apiplaceholder1200400');
+            background-size cover;
+            background-position center;
+            color var(--text-light);
+            padding 100px 0;
+            text-align center;
+        }
+
+        .hero h1 {
+            font-size 48px;
+            margin-bottom 20px;
+            text-transform uppercase;
+        }
+
+        .hero p {
+            font-size 18px;
+            max-width 600px;
+            margin 0 auto;
+            margin-bottom 30px;
+        }
+
+        .hero-button {
+            padding 12px 30px;
+            background-color var(--primary-color);
+            color var(--text-light);
+            border none;
+            border-radius 4px;
+            font-size 16px;
+            font-weight bold;
+            cursor pointer;
+            transition background-color 0.3s ease;
+        }
+
+        .hero-buttonhover {
+            background-color #ff8533;
+        }
+
+         News Section 
+        .news-section {
+            padding 50px 0;
+        }
+
+        .section-title {
+            font-size 32px;
+            margin-bottom 30px;
+            text-align center;
+            text-transform uppercase;
+            color var(--secondary-color);
+        }
+
+        .news-grid {
+            display grid;
+            grid-template-columns repeat(auto-fit, minmax(300px, 1fr));
+            gap 30px;
+        }
+
+        .news-card {
+            background-color #ffffff;
+            border-radius 8px;
+            overflow hidden;
+            box-shadow 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition transform 0.3s ease;
+        }
+
+        .news-cardhover {
+            transform translateY(-10px);
+        }
+
+        .card-img {
+            width 100%;
+            height 200px;
+            object-fit cover;
+        }
+
+        .card-content {
+            padding 20px;
+        }
+
+        .card-category {
+            display inline-block;
+            background-color var(--primary-color);
+            color var(--text-light);
+            padding 5px 10px;
+            border-radius 20px;
+            font-size 12px;
+            margin-bottom 10px;
+        }
+
+        .card-title {
+            font-size 22px;
+            margin-bottom 10px;
+            color var(--secondary-color);
+        }
+
+        .card-desc {
+            margin-bottom 15px;
+            color #666;
+            font-size 14px;
+            line-height 1.5;
+        }
+
+        .card-meta {
+            display flex;
+            justify-content space-between;
+            align-items center;
+            font-size 12px;
+            color #888;
+        }
+
+        .card-button {
+            display inline-block;
+            padding 8px 15px;
+            background-color var(--secondary-color);
+            color var(--text-light);
+            border-radius 4px;
+            text-decoration none;
+            font-weight bold;
+            transition background-color 0.3s ease;
+        }
+
+        .card-buttonhover {
+            background-color var(--primary-color);
+        }
+
+         Admin Panel 
+        .admin-panel {
+            background-color var(--dark-bg);
+            color var(--text-light);
+            padding 50px 0;
+        }
+
+        .admin-form {
+            background-color #ffffff;
+            padding 30px;
+            border-radius 8px;
+            max-width 800px;
+            margin 0 auto;
+        }
+
+        .form-group {
+            margin-bottom 20px;
+        }
+
+        .form-label {
+            display block;
+            margin-bottom 5px;
+            font-weight bold;
+            color var(--text-dark);
+        }
+
+        .form-input, .form-textarea {
+            width 100%;
+            padding 10px;
+            border 1px solid #ddd;
+            border-radius 4px;
+            font-size 16px;
+        }
+
+        .form-textarea {
+            min-height 200px;
+        }
+
+        .form-submit {
+            padding 12px 30px;
+            background-color var(--primary-color);
+            color var(--text-light);
+            border none;
+            border-radius 4px;
+            font-size 16px;
+            font-weight bold;
+            cursor pointer;
+            transition background-color 0.3s ease;
+        }
+
+        .form-submithover {
+            background-color #ff8533;
+        }
+
+         Comments Section 
+        .comments-section {
+            padding 30px;
+            background-color #ffffff;
+            border-radius 8px;
+            margin-top 30px;
+        }
+
+        .comment {
+            border-bottom 1px solid #eee;
+            padding 15px 0;
+        }
+
+        .commentlast-child {
+            border-bottom none;
+        }
+
+        .comment-header {
+            display flex;
+            justify-content space-between;
+            margin-bottom 10px;
+        }
+
+        .comment-author {
+            font-weight bold;
+            color var(--secondary-color);
+        }
+
+        .comment-date {
+            color #888;
+            font-size 12px;
+        }
+
+        .comment-body {
+            line-height 1.5;
+            color #666;
+        }
+
+        .comment-form {
+            margin-top 30px;
+        }
+
+         Footer 
+        footer {
+            background-color var(--dark-bg);
+            color var(--text-light);
+            padding 50px 0;
+            text-align center;
+        }
+
+        .footer-logo {
+            font-size 24px;
+            font-weight bold;
+            color var(--primary-color);
+            margin-bottom 20px;
+            display inline-block;
+        }
+
+        .footer-logo span {
+            color var(--text-light);
+        }
+
+        .footer-links {
+            display flex;
+            justify-content center;
+            flex-wrap wrap;
+            margin-bottom 30px;
+        }
+
+        .footer-links a {
+            color var(--text-light);
+            margin 0 15px;
+            text-decoration none;
+            transition color 0.3s ease;
+        }
+
+        .footer-links ahover {
+            color var(--primary-color);
+        }
+
+        .social-icons {
+            margin-bottom 20px;
+        }
+
+        .social-icons a {
+            display inline-block;
+            margin 0 10px;
+            color var(--text-light);
+            font-size 20px;
+            transition color 0.3s ease;
+        }
+
+        .social-icons ahover {
+            color var(--primary-color);
+        }
+
+        .copyright {
+            font-size 14px;
+            color #888;
+        }
+
+         Responsive Design 
+        @media (max-width 768px) {
+            .header-container {
+                flex-direction column;
+                align-items flex-start;
+            }
+            
+            nav ul {
+                margin-top 15px;
+                flex-direction column;
+            }
+            
+            nav ul li {
+                margin-left 0;
+                margin-bottom 10px;
+            }
+            
+            .auth-buttons {
+                margin-top 15px;
+            }
+            
+            .hero h1 {
+                font-size 36px;
+            }
+            
+            .news-grid {
+                grid-template-columns 1fr;
+            }
+        }
+    style
+head
+body
+    !-- Header --
+    header
+        div class=container header-container
+            a href=# class=logopostenspanpanik24span.lsva
+            nav
+                ul
+                    lia href=#Startseiteali
+                    lia href=#Newsali
+                    lia href=#Trendingali
+                    lia href=#Forumali
+                    lia href=#Über unsali
+                ul
+            nav
+            div class=auth-buttons
+                a href=#Anmeldena
+                a href=#Registrierena
+            div
+        div
+    header
+
+    !-- Hero Section --
+    section class=hero
+        div class=container
+            h1postenpanik24.lsvh1
+            pDeine ultimative Quelle für die neuesten und heißesten News. Bleib informiert und tausche dich mit der Community aus.p
+            button class=hero-buttonNeueste Artikelbutton
+        div
+    section
+
+    !-- News Section --
+    section class=news-section
+        div class=container
+            h2 class=section-titleAktuelle Newsh2
+            div class=news-grid
+                !-- News Card 1 --
+                div class=news-card
+                    img src=apiplaceholder400200 alt=News Bild class=card-img
+                    div class=card-content
+                        span class=card-categoryBreakingspan
+                        h3 class=card-titleGroßes Update für postenpanik24.lsvh3
+                        p class=card-descDie beliebte Community-Plattform erhält ein umfassendes Update mit neuen Funktionen und verbessertem Design.p
+                        div class=card-meta
+                            spanVon Admin • 5. Mai 2025span
+                            span24 Kommentarespan
+                        div
+                        a href=# class=card-buttonWeiterlesena
+                    div
+                div
+
+                !-- News Card 2 --
+                div class=news-card
+                    img src=apiplaceholder400200 alt=News Bild class=card-img
+                    div class=card-content
+                        span class=card-categoryTrendspan
+                        h3 class=card-titleDie Top 10 Memes der Wocheh3
+                        p class=card-descDiese Woche haben wieder zahlreiche Memes für Lacher gesorgt. Wir präsentieren die beliebtesten.p
+                        div class=card-meta
+                            spanVon ModeratorX • 4. Mai 2025span
+                            span42 Kommentarespan
+                        div
+                        a href=# class=card-buttonWeiterlesena
+                    div
+                div
+
+                !-- News Card 3 --
+                div class=news-card
+                    img src=apiplaceholder400200 alt=News Bild class=card-img
+                    div class=card-content
+                        span class=card-categoryCommunityspan
+                        h3 class=card-titleCommunity-Treffen angekündigth3
+                        p class=card-descDas erste offizielle postenpanik24.lsv Community-Treffen findet nächsten Monat statt. Alle Details hier.p
+                        div class=card-meta
+                            spanVon EventTeam • 3. Mai 2025span
+                            span18 Kommentarespan
+                        div
+                        a href=# class=card-buttonWeiterlesena
+                    div
+                div
+            div
+        div
+    section
+
+    !-- Article Section with Comments --
+    section class=news-section
+        div class=container
+            article
+                h2 class=section-titleGroßes Update für postenpanik24.lsvh2
+                img src=apiplaceholder1000400 alt=Featured Image style=width 100%; border-radius 8px; margin-bottom 20px;
+                div style=display flex; justify-content space-between; margin-bottom 20px; color #888;
+                    spanVon Admin • 5. Mai 2025span
+                    spanKategorie Breakingspan
+                div
+                div style=line-height 1.8; margin-bottom 30px;
+                    pDie beliebte Community-Plattform postenpanik24.lsv erhält ein umfassendes Update mit neuen Funktionen und verbessertem Design. Nach monatelanger Entwicklung und Feedback von treuen Nutzern ist es endlich soweit.p
+                    pDas neue Update bringt zahlreiche Verbesserungen mit sichp
+                    ul style=margin-left 20px; margin-bottom 20px;
+                        liKomplett überarbeitetes Benutzerinterfaceli
+                        liSchnellere Ladezeitenli
+                        liNeue Kommentarfunktionen mit Rich-Text-Unterstützungli
+                        liVerbessertes Benachrichtigungssystemli
+                        liIntegrierter Dark Modeli
+                    ul
+                    pWir haben auf das Feedback unserer Community gehört und viele der gewünschten Funktionen implementiert, erklärt der Gründer von postenpanik24.lsv. Unser Ziel war es, die Benutzererfahrung zu verbessern, ohne den einzigartigen Charakter der Plattform zu verlieren.p
+                    pDas Update wird ab dem 10. Mai für alle Nutzer verfügbar sein. Eine Beta-Version kann bereits jetzt von Premium-Mitgliedern getestet werden.p
+                div
+
+                !-- Comments Section --
+                div class=comments-section
+                    h3 style=margin-bottom 20px;Kommentare (24)h3
+                    
+                    !-- Comment 1 --
+                    div class=comment
+                        div class=comment-header
+                            span class=comment-authorMemeKing2000span
+                            span class=comment-date5. Mai 2025, 1435span
+                        div
+                        p class=comment-bodyEndlich kommt der Dark Mode! Meine Augen werden es mir danken, wenn ich nachts durch die Memes scrolle.p
+                    div
+                    
+                    !-- Comment 2 --
+                    div class=comment
+                        div class=comment-header
+                            span class=comment-authorPanikFan123span
+                            span class=comment-date5. Mai 2025, 1220span
+                        div
+                        p class=comment-bodyHoffe, dass die Ladezeiten wirklich besser werden. Das war echt nervig in letzter Zeit. Ansonsten bin ich gespannt auf die neuen Features!p
+                    div
+                    
+                    !-- Comment 3 --
+                    div class=comment
+                        div class=comment-header
+                            span class=comment-authorTechGuruspan
+                            span class=comment-date5. Mai 2025, 1005span
+                        div
+                        p class=comment-bodyAls Beta-Tester kann ich sagen Das Update ist wirklich gelungen! Die neue Oberfläche ist intuitiver und die Benachrichtigungen funktionieren endlich zuverlässig.p
+                    div
+                    
+                    !-- Comment Form --
+                    form class=comment-form
+                        div class=form-group
+                            label for=comment class=form-labelDein Kommentarlabel
+                            textarea id=comment class=form-textarea placeholder=Schreibe deinen Kommentar...textarea
+                        div
+                        button type=submit class=form-submitKommentar abschickenbutton
+                    form
+                div
+            article
+        div
+    section
+
+    !-- Admin Panel --
+    section class=admin-panel id=admin-section style=display none;
+        div class=container
+            h2 class=section-title style=color var(--text-light);Admin-Bereichh2
+            form class=admin-form
+                div class=form-group
+                    label for=article-title class=form-labelTitellabel
+                    input type=text id=article-title class=form-input placeholder=Artikel-Titel eingeben
+                div
+                div class=form-group
+                    label for=article-category class=form-labelKategorielabel
+                    select id=article-category class=form-input
+                        option value=breakingBreakingoption
+                        option value=trendTrendoption
+                        option value=communityCommunityoption
+                        option value=techTechoption
+                        option value=lifestyleLifestyleoption
+                    select
+                div
+                div class=form-group
+                    label for=article-image class=form-labelBild-URLlabel
+                    input type=text id=article-image class=form-input placeholder=URL zum Artikelbild
+                div
+                div class=form-group
+                    label for=article-content class=form-labelInhaltlabel
+                    textarea id=article-content class=form-textarea placeholder=Artikel-Inhalt hier eingebentextarea
+                div
+                button type=submit class=form-submitArtikel veröffentlichenbutton
+            form
+        div
+    section
+
+    !-- Footer --
+    footer
+        div class=container
+            a href=# class=footer-logopostenspanpanik24span.lsva
+            div class=footer-links
+                a href=#Startseitea
+                a href=#Newsa
+                a href=#Trendinga
+                a href=#Foruma
+                a href=#Über unsa
+                a href=#Datenschutza
+                a href=#Impressuma
+            div
+            div class=social-icons
+                a href=#📷a
+                a href=#🐦a
+                a href=#📘a
+                a href=#👾a
+            div
+            p class=copyright© 2025 postenpanik24.lsv - Alle Rechte vorbehaltenp
+        div
+    footer
+
+    script
+         Toggle Admin Panel (nur für Demo-Zwecke)
+        document.addEventListener('DOMContentLoaded', function() {
+             Admin-Bereich anzeigen wenn URL mit admin endet
+            if (window.location.href.includes('admin')) {
+                document.getElementById('admin-section').style.display = 'block';
+            }
+            
+             Event-Listener für Login-Funktion (Demo)
+            const authButtons = document.querySelector('.auth-buttons');
+            const loginButton = authButtons.querySelector('afirst-child');
+            
+            loginButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                const isAdmin = confirm('Als Admin anmelden');
+                if (isAdmin) {
+                    document.getElementById('admin-section').style.display = 'block';
+                    loginButton.textContent = 'Abmelden';
+                    alert('Du bist jetzt als Admin angemeldet!');
+                }
+            });
+            
+             Demo-Funktion für Kommentare
+            const commentForm = document.querySelector('.comment-form');
+            if (commentForm) {
+                commentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const commentText = document.getElementById('comment').value;
+                    if (commentText.trim() !== '') {
+                         Neuen Kommentar erstellen
+                        const commentSection = document.querySelector('.comments-section');
+                        const newComment = document.createElement('div');
+                        newComment.className = 'comment';
+                        
+                        const now = new Date();
+                        const dateStr = now.getDate() + '. ' + 
+                                       ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 
+                                        'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'][now.getMonth()] + 
+                                       ' ' + now.getFullYear() + ', ' +
+                                       now.getHours().toString().padStart(2, '0') + '' + 
+                                       now.getMinutes().toString().padStart(2, '0');
+                        
+                        newComment.innerHTML = `
+                            div class=comment-header
+                                span class=comment-authorBenutzerspan
+                                span class=comment-date${dateStr}span
+                            div
+                            p class=comment-body${commentText}p
+                        `;
+                        
+                         Kommentar vor das Formular einfügen
+                        commentSection.insertBefore(newComment, commentForm);
+                        
+                         Formular zurücksetzen
+                        document.getElementById('comment').value = '';
+                        
+                        alert('Kommentar erfolgreich hinzugefügt!');
+                    }
+                });
+            }
+            
+             Demo-Funktion für Admin-Panel
+            const adminForm = document.querySelector('.admin-form');
+            if (adminForm) {
+                adminForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const title = document.getElementById('article-title').value;
+                    const category = document.getElementById('article-category').value;
+                    
+                    if (title.trim() !== '') {
+                        alert(`Artikel ${title} in der Kategorie ${category} wurde veröffentlicht!`);
+                    }
+                });
+            }
+        });
+    script
+body
+html</pre>
+</body>
+</html>
